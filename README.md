@@ -24,8 +24,8 @@ docker-compose down
 
 #### Running in local computer
 ```bash
-npm install
+yarn install
 ```
 ```bash
-npm start
+yarn start
 ```
