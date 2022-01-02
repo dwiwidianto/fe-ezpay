@@ -1,0 +1,25 @@
+.login {
+    text-align: center;
+    color: #75F991;
+    margin-top: 30px;
+    font-family: ProductSans;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.card{
+    background-color: #1A1A1A;
+    width: 400px;
+    height: 450px;
+    margin-top: 40px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.button {
+    text-decoration: None;
+    color: black;
+    font-family: Roboto Slab;
+    font-weight: bold;
+}

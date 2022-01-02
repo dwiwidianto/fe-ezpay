@@ -6,7 +6,10 @@ const bg = {
   "background-color": "black",
   "display": "flex",
   "min-height": "100vh",
-  "color": "white"
+  "color": "white",
+  "flex-direction": "column",
+  "align-items": "center",
+  "justify-content": "center",
 }
 
 const App = () => {
@@ -14,7 +17,7 @@ const App = () => {
     <div style={bg}>
       <BrowserRouter>
         <Switch>
-          <Route path="/">{Home}</Route>
+          <Route path="/" exact>{Home}</Route>
           <Route path="/login">{Login}</Route>
           <Route path="/register">{Signup}</Route>
         </Switch>
