@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Login, Signup, Home } from "./pages";
 // import { Navbar, Footer } from "./components";
+// coba
 
 const bg = {
   "background-color": "black",
