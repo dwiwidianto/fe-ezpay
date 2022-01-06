@@ -1,51 +1,51 @@
 .login {
-    text-align: center;
-    color: #75F991;
-    margin-top: 10px;
-    font-family: ProductSans;
-    font-weight: bold;
-    font-size: 50px;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #75f991;
+  margin-top: 10px;
+  font-family: ProductSans;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
-.card{
-    background-color: #1A1A1A;
-    width: 350px;
-    height: 440px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    justify-content: center;
+.card {
+  background-color: #1a1a1a;
+  width: 350px;
+  height: 440px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  justify-content: center;
 }
 
-.signin{
-    text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
+.signin {
+  text-align: left;
+  font-family: ProductSans;
+  margin-left: 20px;
 }
 
-.label{
-    text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
+.label {
+  text-align: left;
+  font-family: ProductSans;
+  margin-left: 20px;
 }
 
-.form{
-    margin-left: 20px;
-    padding-left: 0%;
-    padding:5px 40px;
-    margin-top: 8px;
+.form {
+  margin-left: 20px;
+  padding-left: 0%;
+  padding: 5px 40px;
+  margin-top: 8px;
 }
 
 .button {
-    text-decoration: None;
-    color: black;
-    font-family: ProductSans;
-    font-weight: bold;
-    background-color: #75F991;
-    padding: 10px 60px;
-    margin-left: 25%;
-    margin-top: 70px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  text-decoration: None;
+  color: black;
+  font-family: ProductSans;
+  font-weight: bold;
+  background-color: #75f991;
+  padding: 10px 60px;
+  margin-left: 25%;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }

@@ -13,17 +13,36 @@ export default function Login() {
             <div className="form-group">
               <label className={style.label}>Email</label>
               <br />
-              <input type="email" className={style.form}  placeholder="Your email" />
+              <input
+                type="email"
+                className={style.form}
+                placeholder="Your email"
+              />
             </div>
             <div className="form-group">
               <label className={style.label}>Password</label>
               <br />
-              <input type="password" className={style.form} placeholder="Your password" />
+              <input
+                type="password"
+                className={style.form}
+                placeholder="Your password"
+              />
             </div>
             <div className="form-group">
-              <div className="custom-control custom-checkbox" style={{marginLeft:"180px", marginTop:"8px", marginBottom:"8px"}}>
-                <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                <label className="custom-control-label" htmlFor="customCheck1" >
+              <div
+                className="custom-control custom-checkbox"
+                style={{
+                  marginLeft: "20px",
+                  marginTop: "8px",
+                  marginBottom: "15px",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="customCheck1"
+                />
+                <label className="custom-control-label" htmlFor="customCheck1">
                   Remember me
                 </label>
               </div>
@@ -32,12 +51,17 @@ export default function Login() {
               <Button type="submit" href="/" className={style.button}>
                 Login
               </Button>
-            </div><br/><hr />
-            <h6 className="forgot-password text-right" style={{ textAlign: "center" }}>
+            </div>
+            <br />
+            <hr />
+            <h6
+              className="forgot-password text-right"
+              style={{ textAlign: "center" }}
+            >
               Didn't have any account?
               <br />
-              <Button href="/register" style={{color:"#75F991"}}>
-                  Sign Up
+              <Button href="/register" style={{ color: "#75F991" }}>
+                Sign Up
               </Button>
             </h6>
           </Form>
