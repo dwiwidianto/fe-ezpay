@@ -33,13 +33,13 @@ export default function Login() {
                 Login
               </Button>
             </div><br/><hr />
-            <p className="forgot-password text-right" style={{ textAlign: "center" }}>
+            <h6 className="forgot-password text-right" style={{ textAlign: "center" }}>
               Didn't have any account?
               <br />
               <Button href="/register" style={{color:"#75F991"}}>
                   Sign Up
               </Button>
-            </p>
+            </h6>
           </Form>
         </FloatingLabel>
       </Container>
