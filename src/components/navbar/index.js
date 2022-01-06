@@ -1,59 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "./Button";
 import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import "./Navbar.css";
 
-function navbar() {
+export default function Navbar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
     <>
-      <Navbar expand="lg">
-        <Container fluid>
-          <Navbar.Brand
-            className="logo"
-            style={{ marginRight: "400px", color: "#75F991" }}
-          >
-            EZPAY
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link>
-                <Link to="/" style={{ textDecoration: "None", color: "white" }}>
-                  Home
-                </Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link
-                  to="/pln"
-                  style={{ textDecoration: "None", color: "white" }}
-                >
-                  Product
-                </Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link
-                  to="/history"
-                  style={{ textDecoration: "None", color: "white" }}
-                >
-                  History
-                </Link>
-              </Nav.Link>
-            </Nav>
-            <Button variant="outlined" color="success">
-              <Link
-                to="/login"
-                style={{ textDecoration: "None", color: "#75F991" }}
-              >
-                Login
-              </Link>
-            </Button>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          EZPAY
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/products" className="nav-links" onClick={closeMobileMenu}>
+              Products
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact-us" className="nav-links" onClick={closeMobileMenu}>
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
+              Sign Up
+            </Link>
+          </li>
+        </ul>
+        <Button />
+      </nav>
     </>
   );
 }
-export default navbar;
+

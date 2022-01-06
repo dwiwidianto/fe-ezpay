@@ -1,10 +1,12 @@
 import React from "react";
 import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import style from "./signup.module.css";
+import '../../App.css'
 
 export default function Signup() {
   return (
     <>
+    <div className="signup">
       <div className={style.login}>EZPAY</div>
       <Container className={style.card}>
         <FloatingLabel>
@@ -39,6 +41,7 @@ export default function Signup() {
           </Form>
         </FloatingLabel>
       </Container>
+      </div>
     </>
   );
 }
