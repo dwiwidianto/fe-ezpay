@@ -1,10 +1,12 @@
 import React from "react";
 import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import style from "./login.module.css";
+import '../../App.css'
 
 export default function Login() {
   return (
     <>
+    <div className="login">
       <div className={style.login}>EZPAY</div>
       <Container className={style.card}>
         <FloatingLabel>
@@ -33,16 +35,17 @@ export default function Login() {
                 Login
               </Button>
             </div><br/><hr />
-            <h6 className="forgot-password text-right" style={{ textAlign: "center" }}>
+            <p className="forgot-password text-right" style={{ textAlign: "center" }}>
               Didn't have any account?
               <br />
               <Button href="/register" style={{color:"#75F991"}}>
                   Sign Up
               </Button>
-            </h6>
+            </p>
           </Form>
         </FloatingLabel>
       </Container>
+      </div>
     </>
   );
 }
