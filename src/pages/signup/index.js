@@ -30,12 +30,12 @@ export default function Signup() {
                 Sign Up
               </Button>
             </div>
-            <p className="forgot-password text-right" style={{ textAlign: "center" }}>
+            <h6 className="forgot-password text-right" style={{ textAlign: "center" }}>
               Already have an account?  
               <Button href="/login" style={{color:"#75F991"}}>
                   Login
               </Button>
-            </p>
+            </h6>
           </Form>
         </FloatingLabel>
       </Container>
