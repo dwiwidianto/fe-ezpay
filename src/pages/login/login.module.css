@@ -1,7 +1,7 @@
 .login {
     text-align: center;
     color: #75F991;
-    margin-top: 30px;
+    margin-top: 10px;
     font-family: ProductSans;
     font-weight: bold;
     font-size: 50px;
@@ -10,16 +10,41 @@
 
 .card{
     background-color: #1A1A1A;
-    width: 400px;
-    height: 450px;
-    margin-top: 40px;
-    border-radius: 20px;
+    width: 350px;
+    height: 420px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
     justify-content: center;
+}
+
+.signin{
+    text-align: left;
+    font-family: ProductSans;
+    margin-left: 20px;
+}
+
+.label{
+    text-align: left;
+    font-family: ProductSans;
+    margin-left: 20px;
+}
+
+.form{
+    margin-left: 20px;
+    padding:5px 40px;
+    margin-top: 8px;
 }
 
 .button {
     text-decoration: None;
     color: black;
-    font-family: Roboto Slab;
+    font-family: ProductSans;
     font-weight: bold;
+    background-color: #75F991;
+    padding: 10px 60px;
+    margin-left: 28%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
