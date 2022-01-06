@@ -7,11 +7,11 @@ export default function Login() {
   return (
     <>
     <div className="login">
-      <div className={style.login}>EZPAY</div>
+      <div className={style.loginIcon}>EZPAY</div>
       <Container className={style.card}>
         <FloatingLabel>
           <Form>
-            <h2 className={style.signin}>Login</h2>
+            <h2 className={style.labelLogin}>Login</h2>
             <div className="form-group">
               <label className={style.label}>Email</label>
               <br />
@@ -23,9 +23,9 @@ export default function Login() {
               <input type="password" className={style.form} placeholder="Your password" />
             </div>
             <div className="form-group">
-              <div className="custom-control custom-checkbox" style={{marginLeft:"180px", marginTop:"8px", marginBottom:"8px"}}>
+              <div className="custom-control custom-checkbox" className={style.rememberme}>
                 <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                <label className="custom-control-label" htmlFor="customCheck1" >
+                <label className="custom-control-label" style={{marginLeft: "5px"}} htmlFor="customCheck1" >
                   Remember me
                 </label>
               </div>
@@ -34,8 +34,8 @@ export default function Login() {
               <Button type="submit" href="/" className={style.button}>
                 Login
               </Button>
-            </div><br/><hr />
-            <p className="forgot-password text-right" style={{ textAlign: "center" }}>
+            </div><br/><hr/>
+            <p className="forgot-password text-right" style={{ textAlign: "center", marginTop:"10px" }}>
               Didn't have any account?
               <br />
               <Button href="/register" style={{color:"#75F991"}}>

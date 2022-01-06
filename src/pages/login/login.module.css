@@ -1,50 +1,58 @@
-.login {
-    text-align: center;
-    color: #75F991;
+.loginIcon {
+  text-align: center;
+  color: #75f991;
+  margin-top: 10px;
+  font-family: ProductSans;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #1a1a1a;
+  width: 350px;
+  height: 420px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.labelLogin {
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.label {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.form {
+  margin-left: 40px;
+  padding: 10px 30px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.rememberme {
+    text-align: left;
+    margin-left: 40px;
     margin-top: 10px;
-    font-family: ProductSans;
-    font-weight: bold;
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.card{
-    background-color: #1A1A1A;
-    width: 350px;
-    height: 420px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    justify-content: center;
-}
-
-.signin{
-    text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
-}
-
-.label{
-    text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
-}
-
-.form{
-    margin-left: 20px;
-    padding:5px 40px;
-    margin-top: 8px;
-}
+    margin-bottom: 30px;
+  }
 
 .button {
-    text-decoration: None;
-    color: black;
-    font-family: ProductSans;
-    font-weight: bold;
-    background-color: #75F991;
-    padding: 10px 60px;
-    margin-left: 28%;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  text-decoration: None;
+  color: black;
+  font-weight: bold;
+  background-color: #75f991;
+  padding: 10px 60px;
+  margin-left: 25%;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
+
+
