@@ -9,40 +9,35 @@ export default function Login() {
       <Container className={style.card}>
         <FloatingLabel>
           <Form>
-            <h3 style={{ textAlign: "center" }}>Sign In</h3>
+            <h2 className={style.signin}>Login</h2>
             <div className="form-group">
-              <label>Email address</label>
+              <label className={style.label}>Email</label>
               <br />
-              <input type="email" className="form-control" placeholder="Enter email" />
+              <input type="email" className={style.form}  placeholder="Your email" />
             </div>
-
             <div className="form-group">
-              <label>Password</label>
+              <label className={style.label}>Password</label>
               <br />
-              <input type="password" className="form-control" placeholder="Enter password" />
+              <input type="password" className={style.form} placeholder="Your password" />
             </div>
-
             <div className="form-group">
-              <div className="custom-control custom-checkbox">
+              <div className="custom-control custom-checkbox" style={{marginLeft:"180px", marginTop:"8px", marginBottom:"8px"}}>
                 <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                <label className="custom-control-label" htmlFor="customCheck1">
+                <label className="custom-control-label" htmlFor="customCheck1" >
                   Remember me
                 </label>
               </div>
             </div>
             <div class="col-md-12 text-center">
-              <Button type="submit" className="btn btn-primary btn-block" variant="warning" style={{ fontFamily: "Roboto Slab", fontWeight: "bold" }}>
+              <Button type="submit" href="/" className={style.button}>
                 Login
               </Button>
-              <hr />
-            </div>
+            </div><br/><hr />
             <p className="forgot-password text-right" style={{ textAlign: "center" }}>
               Didn't have any account?
               <br />
-              <Button className="btn btn-warning btn-block">
-                <a href="/signup" classname={style.button}>
+              <Button href="/register" style={{color:"#75F991"}}>
                   Sign Up
-                </a>
               </Button>
             </p>
           </Form>
