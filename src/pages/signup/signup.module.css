@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login {
   text-align: center;
   color: #75f991;
@@ -48,4 +49,56 @@
   margin-top: 70px;
   margin-bottom: 10px;
   border-radius: 5px;
+=======
+.labelIcon {
+    text-align: center;
+    color: #75F991;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.card{
+    background-color: #1A1A1A;
+    width: 350px;
+    height: 440px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.labelRegister{
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.label{
+    text-align: left;
+    margin-left: 40px;
+}
+
+
+.form{
+    margin-left: 40px;
+    padding:10px 30px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.button {
+    text-decoration: None;
+    color: black;
+    font-weight: bold;
+    background-color: #75F991;
+    padding: 10px 60px;
+    margin-left: 25%;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+>>>>>>> efe9e3545888f6136ff761f5e4eaca78e9e6d8ba
 }
