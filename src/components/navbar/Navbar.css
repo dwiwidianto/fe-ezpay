@@ -8,12 +8,13 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: #75f991;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  font-weight: bolder;
 }
 
 .fa-firstdraft {
@@ -44,12 +45,7 @@
   padding: 0.5rem 1rem;
 }
 
-.nav-links:hover {
-  background-color: #75f991;
-  color: #242222;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
-}
+
 
 .fa-bars {
   color: #fff;

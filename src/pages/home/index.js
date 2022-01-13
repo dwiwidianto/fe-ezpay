@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Navbar } from "../../components";
+import { Navbar, Footer } from "../../components";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <div className="home">
         <h1>Dashboard</h1>
       </div>
+      <Footer />
     </>
   );
 }

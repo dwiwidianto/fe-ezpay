@@ -1,50 +1,36 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import "./statusbar.module.css"
+// import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <footer
-      className="font-small pt-4 mt-4"
-      style={{
-        backgroundColor: "black",
-        position: "relative",
-        bottom: " 0",
-        width: "100%",
-      }}
-    >
+    <footer className="statusbar">
       <Container fluid className="footer">
         <Row>
           <Col md="5">
-            <h5
-              className="logo"
-              style={{
-                color: "black",
-                textAlign: "left",
-                paddingLeft: "32px",
-              }}
-            >
+            <h5 className="footer-logo">
               EZPAY
             </h5>
-            <BsFacebook style={{ marginLeft: "30px", marginRight: "10px" }} />
+            {/* <BsFacebook style={{ marginLeft: "30px", marginRight: "10px" }} />
             <BsTwitter style={{ marginRight: "10px" }} />
-            <BsInstagram />
+            <BsInstagram /> */}
           
           <Col md="3">
-            <h5 style={{ fontFamily: "Roboto Slab" }}>Ezpay App</h5>
+            <h5 className="sublist">Ezpay App</h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   Why Ezpay App
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   How it works
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   Client Stories
                 </a>
               </li>
@@ -52,22 +38,22 @@ export default function Footer() {
           </Col>
           </Col>
           <Col md="4">
-            <h5 style={{ fontFamily: "Roboto Slab", textAlign: "left" }}>
+            <h5 className="sublist2">
               Company
             </h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   Career
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   About Us
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!" style={{ textDecoration: "None", color: "white" }}>
+                <a href="#!" className="list">
                   Features
                 </a>
               </li>
@@ -75,8 +61,8 @@ export default function Footer() {
           </Col>
         </Row>
       </Container>
-      <Container fluid style={{ backgroundColor: "#1A1A1A", height: "50px" }}>
-        <p style={{ marginLeft: "500px",  }}> Copyright © 2021 Kelompok 13 </p>
+      <Container fluid className="cont-fluid">
+        <p className="copyright"> Copyright © 2021 Kelompok 13 </p>
       </Container>
     </footer>
   );

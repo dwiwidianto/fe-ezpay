@@ -5,18 +5,17 @@ import './App.css'
 
 const App = () => {
   return (
+    <>
       <BrowserRouter>
         <Switch>
-    <div className="bg">
-
+        <div className="bg">
           <Route className="display-bg" path="/" component={Home} exact />
           <Route path="/login" component={Login} exact />
           <Route path="/register" component={Signup} exact />
-    </div>
-
+        </div>
         </Switch>
-
       </BrowserRouter>
+    </>
   );
 };
 

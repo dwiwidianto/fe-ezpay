@@ -23,7 +23,7 @@ export default function Login() {
               <input type="password" className={style.form} placeholder="Your password" />
             </div>
             <div className="form-group">
-              <div className="custom-control custom-checkbox" className={style.rememberme}>
+              <div className={style.rememberme}>
                 <input type="checkbox" className="custom-control-input" id="customCheck1" />
                 <label className="custom-control-label" style={{marginLeft: "5px"}} htmlFor="customCheck1" >
                   Remember me
