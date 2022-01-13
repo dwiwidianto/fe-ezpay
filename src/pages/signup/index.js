@@ -18,6 +18,11 @@ export default function Signup() {
               <input type="text" className={style.form}  placeholder="Your full name" />
             </div>
             <div className="form-group">
+              <label className={style.label}>Phone</label>
+              <br />
+              <input type="text" className={style.form}  placeholder="Your phone number" />
+            </div>
+            <div className="form-group">
               <label className={style.label}>Email</label>
               <br />
               <input type="email" className={style.form}  placeholder="Your email" />
