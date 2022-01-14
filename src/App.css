@@ -19,3 +19,8 @@
   align-items: center;
   justify-content: center;
 }
+.products{
+  display: flex;
+  min-height: 100vh;
+  margin-top: 5rem;
+}
