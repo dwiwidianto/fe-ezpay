@@ -1,69 +1,146 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import "./statusbar.module.css"
-// import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="statusbar">
-      <Container fluid className="footer">
-        <Row>
-          <Col md="5">
-            <h5 className="footer-logo">
-              EZPAY
-            </h5>
-            {/* <BsFacebook style={{ marginLeft: "30px", marginRight: "10px" }} />
-            <BsTwitter style={{ marginRight: "10px" }} />
-            <BsInstagram /> */}
-          
-          <Col md="3">
-            <h5 className="sublist">Ezpay App</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  Why Ezpay App
-                </a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  How it works
-                </a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  Client Stories
-                </a>
-              </li>
-            </ul>
-          </Col>
-          </Col>
-          <Col md="4">
-            <h5 className="sublist2">
-              Company
-            </h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  Career
-                </a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  About Us
-                </a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!" className="list">
-                  Features
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-      <Container fluid className="cont-fluid">
-        <p className="copyright"> Copyright © 2021 Kelompok 13 </p>
-      </Container>
-    </footer>
+    <>
+      <footer
+        className="statusbar"
+        style={{
+          backgroundColor: "#141414",
+          position: "relative",
+          bottom: "0",
+          width: "100%",
+        }}
+      >
+        <Container fluid className="footer">
+          <Row>
+            <Col xs={6} md={4}>
+              <h5
+                className="footer-logo"
+                style={{
+                  color: "#75F991",
+                  textAlign: "left",
+                  paddingLeft: "32px",
+                  fontSize: "30px",
+                }}
+              >
+                EZPAY
+              </h5>
+              <BsFacebook
+                style={{
+                  color: "#ffffff",
+                  marginLeft: "30px",
+                  marginRight: "10px",
+                }}
+              />
+              <BsTwitter style={{ color: "#ffffff", marginRight: "10px" }} />
+              <BsInstagram style={{ color: "#ffffff" }} />
+              <br />
+              <div
+                style={{
+                  color: "white",
+                  fontSize: "18px",
+                  marginLeft: "30px",
+                  marginTop: "30px",
+                }}
+              >
+                {" "}
+                Terms of Service | Privacy Policy{" "}
+              </div>
+            </Col>
+            <Col xs={6} md={4}>
+              <h3
+                className="sublist"
+                style={{ fontFamily: "Roboto Slab", color: "white" }}
+              >
+                Ezpay App
+              </h3>
+              <ul>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    Why Ezpay App
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    How it works
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    Client Stories
+                  </a>
+                </li>
+              </ul>
+            </Col>
+            <Col xs={6} md={4}>
+              <h3
+                className="sublist2"
+                style={{
+                  fontFamily: "Roboto Slab",
+                  textAlign: "left",
+                  color: "white",
+                }}
+              >
+                Company
+              </h3>
+              <ul>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    Career
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a
+                    href="#!"
+                    style={{ textDecoration: "None", color: "#ffffff" }}
+                  >
+                    Features
+                  </a>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+        <Container
+          fluid
+          className="cont-fluid"
+          style={{ backgroundColor: "#1A1A1A", height: "40px" }}
+        >
+          <div
+            className="copyright"
+            style={{ marginLeft: "40%", color: "#ffffff", paddingTop: "10px" }}
+          >
+            Copyright © 2021{" "}
+            <a href="/#" style={{ color: "#75F991", textDecoration: "None" }}>
+              Kelompok 13
+            </a>
+          </div>
+        </Container>
+      </footer>
+    </>
   );
 }
