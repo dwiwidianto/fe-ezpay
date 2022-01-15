@@ -17,7 +17,7 @@ export default function Footer() {
       >
         <Container fluid className="footer">
           <Row>
-            <Col xs={6} md={4}>
+            <Col md={6}>
               <h5
                 className="footer-logo"
                 style={{
@@ -51,13 +51,13 @@ export default function Footer() {
                 Terms of Service | Privacy Policy{" "}
               </div>
             </Col>
-            <Col xs={6} md={4}>
-              <h3
+            <Col md={3}>
+              <h4
                 className="sublist"
-                style={{ fontFamily: "Roboto Slab", color: "white" }}
+                style={{ fontFamily: "Roboto Slab", color: "white", marginLeft:"30px" }}
               >
                 Ezpay App
-              </h3>
+              </h4>
               <ul>
                 <li className="list-unstyled">
                   <a
@@ -85,17 +85,18 @@ export default function Footer() {
                 </li>
               </ul>
             </Col>
-            <Col xs={6} md={4}>
-              <h3
+            <Col md={3}>
+              <h4
                 className="sublist2"
                 style={{
                   fontFamily: "Roboto Slab",
                   textAlign: "left",
                   color: "white",
+                  marginLeft:"30px"
                 }}
               >
                 Company
-              </h3>
+              </h4>
               <ul>
                 <li className="list-unstyled">
                   <a
