@@ -42,13 +42,27 @@
     margin-bottom: 15px;
   }
 
-.button {
-  text-decoration: None;
-  color: black;
-  font-weight: bold;
-  background-color: #75f991;
+.btn {
   padding: 10px 60px;
-  border-radius: 5px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: var(--primary);
 }
+
+.btn:hover {
+  padding: 10px 60px;
+  transition: all 0.3s ease-out;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+
+
 
 
