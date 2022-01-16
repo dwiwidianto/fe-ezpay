@@ -28,15 +28,15 @@ export default function Signup() {
               <input type="password" className={style.form} placeholder="Your password" />
             </div><br/>
             <div class="col-md-12 text-center">
-              <Button type="submit" href="/" className={style.button}>
+              <Button type="submit" href="/" className={style.btn}>
                 Sign Up
               </Button>
             </div>
             <p className="forgot-password text-right" style={{ textAlign: "center",marginTop:"20px" }}>
               Already have an account?  
-              <Button href="/login" style={{color:"#75F991", marginLeft:"2px"}}>
+              <a href="/login" style={{color:"#75F991", marginLeft:"2px"}}>
                   Login
-              </Button>
+              </a>
             </p>
           </Form>
         </FloatingLabel>
