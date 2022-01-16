@@ -1,9 +1,8 @@
 import React from "react";
 import "../../App.css";
-import { Navbar } from "../../components";
-import { CardProduct } from "../../components";
+import { Navbar, CardProduct } from "../../components";
 import style from "./pln.module.css";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, OverlayTrigger } from "react-bootstrap";
 
 export default function PLN() {
   return (
@@ -11,10 +10,14 @@ export default function PLN() {
       <Navbar />
       <CardProduct />
       <div className="products">
-        <Container className={style.containerCard}>
-            <div className={style.card}>
-              <h1 className={style.textDisplay}>PLN</h1>
-            </div>
+        <Container>
+          <Row>
+            <Col>
+              <Card className={style.cardStyle} >
+                <Card.Body>This is some text within a card body. </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Container>
       </div>
     </>

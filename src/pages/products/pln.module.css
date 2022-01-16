@@ -1,19 +1,5 @@
-.textDisplay {
-  margin-left: 10rem;
-  text-align: left;
-}
-
-.containerCard{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.card {
-  background-color: #1a1a1a;
-  width: 47rem;
-  height: 10rem;
-  margin-top: 5rem;
-  margin-left: 18rem;
-  margin-right: 18rem;
-  border-radius: 10px;
+.cardStyle {
+  background-color: aquamarine;
+  margin: 0rem 7rem 0rem 7rem;
+  
 }

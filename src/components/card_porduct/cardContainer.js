@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./cardConainer.module.css";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function cardContainer() {
   return (
