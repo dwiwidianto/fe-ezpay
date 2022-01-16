@@ -38,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "capstone project",
+  "main": "index.js",
+  "repository": "https://github.com/dwiwidianto/fe-ezpay.git",
+  "author": "fannanilam",
+  "license": "0"
 }

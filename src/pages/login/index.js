@@ -15,12 +15,20 @@ export default function Login() {
             <div className="form-group">
               <label className={style.label}>Email</label>
               <br />
-              <input type="email" className={style.form}  placeholder="Your email" />
+              <input
+                type="email"
+                className={style.form}
+                placeholder="Your email"
+              />
             </div>
             <div className="form-group">
               <label className={style.label}>Password</label>
               <br />
-              <input type="password" className={style.form} placeholder="Your password" />
+              <input
+                type="password"
+                className={style.form}
+                placeholder="Your password"
+              />
             </div>
             <div className="form-group">
               <div className="custom-control custom-checkbox" className={style.rememberme}>
