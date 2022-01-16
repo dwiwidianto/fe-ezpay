@@ -2,7 +2,6 @@
   text-align: center;
   color: #75f991;
   margin-top: 10px;
-  font-family: ProductSans;
   font-weight: bold;
   font-size: 50px;
   margin-bottom: 20px;
@@ -10,10 +9,9 @@
 
 .card {
   background-color: #1a1a1a;
-  width: 350px;
-  height: 420px;
-  margin-top: 20px;
-  margin-left: 20px;
+  width: 400px;
+  height: 500px;
+  margin-top: 10px;
   border-radius: 10px;
   justify-content: center;
 }
@@ -40,8 +38,8 @@
 .rememberme {
     text-align: left;
     margin-left: 40px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
 
 .button {
@@ -50,8 +48,6 @@
   font-weight: bold;
   background-color: #75f991;
   padding: 10px 60px;
-  margin-left: 25%;
-  margin-bottom: 20px;
   border-radius: 5px;
 }
 
