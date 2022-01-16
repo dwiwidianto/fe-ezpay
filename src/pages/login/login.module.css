@@ -1,50 +1,68 @@
-.login {
-    text-align: center;
-    color: #75F991;
-    margin-top: 10px;
-    font-family: ProductSans;
-    font-weight: bold;
-    font-size: 50px;
-    margin-bottom: 20px;
+.loginIcon {
+  text-align: center;
+  color: #75f991;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
-.card{
-    background-color: #1A1A1A;
-    width: 350px;
-    height: 420px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    justify-content: center;
+.card {
+  background-color: #1a1a1a;
+  width: 400px;
+  height: 500px;
+  margin-top: 10px;
+  border-radius: 10px;
+  justify-content: center;
 }
 
-.signin{
+.labelLogin {
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.label {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.form {
+  margin-left: 40px;
+  padding: 10px 30px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.rememberme {
     text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+.btn {
+  padding: 10px 60px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: var(--primary);
 }
 
-.label{
-    text-align: left;
-    font-family: ProductSans;
-    margin-left: 20px;
+.btn:hover {
+  padding: 10px 60px;
+  transition: all 0.3s ease-out;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease-out;
 }
 
-.form{
-    margin-left: 20px;
-    padding:5px 40px;
-    margin-top: 8px;
-}
 
-.button {
-    text-decoration: None;
-    color: black;
-    font-family: ProductSans;
-    font-weight: bold;
-    background-color: #75F991;
-    padding: 10px 60px;
-    margin-left: 28%;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
+
+
+
