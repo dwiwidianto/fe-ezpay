@@ -1,5 +1,125 @@
-.cardStyle {
-  background-color: aquamarine;
-  margin: 0rem 7rem 0rem 7rem;
-  
+.card {
+  background-color: transparent;
+  color: white;
+  border-color: hsl(0, 1%, 33%);
+  margin: 0rem 7rem 7rem 7rem;
+  width: auto;
+}
+
+.radioColor {
+  background-color: #000000;
+}
+
+/* Start Card Nominal */
+
+.cardRadio {
+  display: none;
+}
+
+input[type="radio"] {
+  color: #75f991;
+}
+
+.radioButtons {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  flex-wrap: wrap;
+}
+
+.radioBtn {
+  width: 180px;
+  height: 60px;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 8px 15px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.labelNominal {
+  color: #ffffff;
+  font-size: large;
+  margin: auto;
+}
+
+input:checked + .radioBtn {
+  border: 2px solid #75f991;
+  animation: bounceIn 1s;
+}
+
+/* Let's create an bounceIn animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Let's write a media query to make it responsive */
+@media (max-width: 500px) {
+  .content .title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .content .desc {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: var(--primary);
+  justify-content: end;
+}
+
+.btn:hover {
+  padding: 6px 18px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid var(--primary);
+}
+
+/* End Card Nominal */
+
+/* Keterangan */
+
+.cardKeterangan {
+  height: 9rem;
+  margin: 1rem 0 1rem 0;
+}
+.labelKeterangan {
+  color: #000000;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 10px 0 0 20px;
+}
+
+.listKeterangan {
+  color: #000000;
+  font-size: 17px;
+  margin-left: 10px;
+}
+/* End Ketrerangan */
+
+
+.Totalbayar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 1rem auto;
+    flex-wrap: wrap;
 }

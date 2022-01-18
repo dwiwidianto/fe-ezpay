@@ -35,7 +35,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
+            <Link to="/register" className="nav-links-mobile" onClick={closeMobileMenu}>
               Sign Up
             </Link>
           </li>
