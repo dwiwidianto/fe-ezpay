@@ -31,16 +31,16 @@ export default function Login() {
               </div>
             </div>
             <div class="col-md-12 text-center">
-              <Button type="submit" href="/" className={style.button}>
+              <Button type="submit" href="/" className={style.btn}>
                 Login
               </Button>
             </div><br/><hr/>
             <p className="forgot-password text-right" style={{ textAlign: "center", marginTop:"10px" }}>
               Didn't have any account?
               <br />
-              <Button href="/register" style={{color:"#75F991"}}>
+              <a href="/register" style={{color:"#75F991"}}>
                   Sign Up
-              </Button>
+              </a>
             </p>
           </Form>
         </FloatingLabel>
