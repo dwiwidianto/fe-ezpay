@@ -1,4 +1,4 @@
-name: CI Backend EzPay
+name: CI Frontend EzPay
 
 on:
   push:
