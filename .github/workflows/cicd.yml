@@ -34,5 +34,6 @@ jobs:
         script: |
           docker rm -f fe_service
           docker rmi -f $(docker images -a -q)
+          docker pull nginx:alpine
           docker pull dwiwidianto/fe-ezpay:latest
           docker run -d --name fe_service -p 80:80 dwiwidianto/be-ezpay:latest
