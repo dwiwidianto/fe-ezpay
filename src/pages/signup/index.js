@@ -3,7 +3,15 @@ import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import style from "./signup.module.css";
 import '../../App.css'
 
-export default function Signup() {
+
+const SignUp = () => {
+
+  // const emailEl = useRef();
+  // const imageEl = useRef();
+  // const fullnameEl = useRef();
+  // const passwordEl = useRef();
+  // const confirmPasswordEl = useRef();
+
   return (
     <>
     <div className="signup">
@@ -23,10 +31,21 @@ export default function Signup() {
               <input type="email" className={style.form}  placeholder="Your email" />
             </div>
             <div className="form-group">
+              <label className={style.label}>Phone</label>
+              <br />
+              <input type="tel" className={style.form}  placeholder="Your phone number" />
+            </div>
+            <div className="form-group">
               <label className={style.label}>Password</label>
               <br />
               <input type="password" className={style.form} placeholder="Your password" />
-            </div><br/>
+            </div>
+            <div className="form-group">
+              <label className={style.label}>Confirm Password</label>
+              <br />
+              <input type="password" className={style.form} placeholder="Your confirm password" />
+            </div>
+            <br/>
             <div class="col-md-12 text-center">
               <Button type="submit" href="/" className={style.btn}>
                 Sign Up
@@ -45,3 +64,5 @@ export default function Signup() {
     </>
   );
 }
+
+export default SignUp;
