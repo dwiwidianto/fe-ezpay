@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # fetch
+=======
+
+
+>>>>>>> 0e043296b07ce82a17216a4fb4e79ec9a7b3e8c7
 # dependencies
 /node_modules
 /.pnp
