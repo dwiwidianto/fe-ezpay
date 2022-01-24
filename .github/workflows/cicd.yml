@@ -1,38 +1,38 @@
-name: CICD Frontend EzPay
+# name: CICD Frontend EzPay
 
-on:
-  push:
+# on:
+#   push:
 #     branches: [ development ]
 
-jobs:
-  build-docker:
-    name: "build image and push to registry"
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: "Build image"
-      run: docker build -t dwiwidianto/fe-ezpay:latest .
-    - name: "Login Docker Registry"
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: "Push Image to Regsitry"
-      run: docker push dwiwidianto/fe-ezpay:latest
+# jobs:
+#   build-docker:
+#     name: "build image and push to registry"
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: "Build image"
+#       run: docker build -t dwiwidianto/fe-ezpay:latest .
+#     - name: "Login Docker Registry"
+#       uses: docker/login-action@v1
+#       with:
+#         username: ${{ secrets.DOCKER_USERNAME }}
+#         password: ${{ secrets.DOCKER_PASSWORD }}
+#     - name: "Push Image to Regsitry"
+#       run: docker push dwiwidianto/fe-ezpay:latest
 
-  release:
-    name: build
-    runs-on: ubuntu-latest
-    needs: build-docker
-    steps:
-    - name: "remote server"
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST_SSH }}
-        username: ${{ secrets.USERNAME_SSH }}
-        password: ${{ secrets.PASSWORD_SSH }}
-        script: |
-          docker rm -f fe_service
-          docker rmi -f $(docker images -a -q)
-          docker pull dwiwidianto/fe-ezpay:latest
-          docker run -d --name fe_service -p 8000:8000 dwiwidianto/fe-ezpay:latest
+#   release:
+#     name: build
+#     runs-on: ubuntu-latest
+#     needs: build-docker
+#     steps:
+#     - name: "remote server"
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.HOST_SSH }}
+#         username: ${{ secrets.USERNAME_SSH }}
+#         password: ${{ secrets.PASSWORD_SSH }}
+#         script: |
+#           docker rm -f fe_service
+#           docker rmi -f $(docker images -a -q)
+#           docker pull dwiwidianto/fe-ezpay:latest
+#           docker run -d --name fe_service -p 8000:8000 dwiwidianto/fe-ezpay:latest
