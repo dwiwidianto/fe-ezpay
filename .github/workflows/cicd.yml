@@ -2,7 +2,7 @@ name: CICD Frontend EzPay
 
 on:
   push:
-    branches: [ development ]
+#     branches: [ development ]
 
 jobs:
   build-docker:
