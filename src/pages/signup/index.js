@@ -4,8 +4,11 @@ import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import style from "./signup.module.css";
 import "../../App.css";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const SignUp = () => {
+  const { accessToken } = useSelector((state) => state.auth);
+
   const emailEl = useRef();
   const phoneEl = useRef();
   const fullnameEl = useRef();
@@ -15,6 +18,10 @@ const SignUp = () => {
   const [err, setErr] = useState("");
 
   const history = useHistory();
+
+  if (accessToken !== "") {
+    history.push("/");
+  }
 
   const signUp = async (fullname, phone, email, password) => {
     let res = await axios.post("http://localhost:8000/v1/users", {

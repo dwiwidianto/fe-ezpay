@@ -1,13 +1,27 @@
 import React, { useState } from "react";
-import { Button } from "./Button";
+import style from "./Button.module.css";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/authSlice";
+import { useHistory } from "react-router-dom";
 
 export default function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const { accessToken } = useSelector((state) => state.auth);
+
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+    history.push("/login");
+  };
 
   return (
     <>
@@ -34,15 +48,18 @@ export default function Navbar() {
               Contact Us
             </Link>
           </li>
-          <li>
-            <Link to="/register" className="nav-links-mobile" onClick={closeMobileMenu}>
-              Sign Up
-            </Link>
-          </li>
         </ul>
-        <Button />
+        {accessToken !== "" && (
+          <button onClick={logoutHandler} className={style.btn}>
+            Logout
+          </button>
+        )}
+        {accessToken === "" && (
+          <Link to="/login">
+            <button className={style.btn}>Login</button>
+          </Link>
+        )}
       </nav>
     </>
   );
 }
-
