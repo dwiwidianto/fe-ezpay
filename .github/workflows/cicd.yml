@@ -35,4 +35,4 @@ jobs:
           docker rm -f fe_service
           docker rmi -f $(docker images -a -q)
           docker pull dwiwidianto/fe-ezpay:latest
-          docker run -d --name fe_service -p 8000:8000 dwiwidianto/fe-ezpay:latest
+          docker run -d --name fe_service -p 80:80 dwiwidianto/fe-ezpay:latest
