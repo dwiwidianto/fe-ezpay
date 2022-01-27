@@ -94,6 +94,10 @@ input:checked + .radioBtn {
   border: 2px solid var(--primary);
 }
 
+.right {
+  margin-left: auto;
+}
+
 /* End Card Nominal */
 
 /* Keterangan */
@@ -116,10 +120,9 @@ input:checked + .radioBtn {
 }
 /* End Ketrerangan */
 
-
-.Totalbayar{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 1rem auto;
-    flex-wrap: wrap;
+.Totalbayar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem auto;
+  flex-wrap: wrap;
 }

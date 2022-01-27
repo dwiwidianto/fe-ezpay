@@ -47,6 +47,7 @@
   cursor: pointer;
   background-color: var(--primary);
   justify-content: end;
+  margin-left: auto;
 }
 
 .btn:hover {
