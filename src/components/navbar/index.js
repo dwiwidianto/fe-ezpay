@@ -34,18 +34,13 @@ export default function Navbar() {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link to="/products/pln" className="nav-links" onClick={closeMobileMenu}>
               Products
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/home" className="nav-links" onClick={closeMobileMenu}>
-              Contact Us
+            <Link to="/history" className="nav-links" onClick={closeMobileMenu}>
+              History Transaction
             </Link>
           </li>
         </ul>

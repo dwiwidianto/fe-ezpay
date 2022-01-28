@@ -1,12 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Product Sans';
+  font-family: "Product Sans";
 }
 
 .bg {
   background-color: black;
- 
 }
 
 .home,
@@ -19,8 +18,11 @@
   align-items: center;
   justify-content: center;
 }
-.products{
+.products {
   display: flex;
   min-height: 100vh;
   margin-top: 5rem;
+}
+.history {
+  min-height: 100vh;
 }

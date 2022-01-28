@@ -8,31 +8,31 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 export default function PDAM() {
-  const [wilayah, setWilayah] = useState("jakarta");
-  const [nomor, setNomor] = useState(0);
+  const [region, setRegion] = useState("jakarta");
+  const [billNumber, setBillNumber] = useState(0);
   const [error, setError] = useState("");
 
   const onChangeHandler = (e) => {
     e.preventDefault();
-    setWilayah(e.target.value);
+    setRegion(e.target.value);
   };
 
   const onChangingHandler = (e) => {
     e.preventDefault();
-    setNomor(e.target.value);
+    setBillNumber(e.target.value);
   };
 
   const history = useHistory();
 
   const { accessToken } = useSelector((state) => state.auth);
 
-  const transaction = async (wilayah, nomor) => {
+  const transaction = async (region, billNumber) => {
     let res = await axios.post(
       "http://localhost:8000/v1/transactions",
       {
         product: "pdam",
-        wilayah,
-        nomor,
+        region,
+        billNumber,
       },
       {
         headers: {
@@ -50,7 +50,10 @@ export default function PDAM() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    transaction(wilayah, nomor);
+    if (accessToken === "") {
+      history.push("/login");
+    }
+    transaction(region, parseInt(billNumber));
   };
 
   return (
@@ -79,13 +82,11 @@ export default function PDAM() {
                     <Card className={style.cardKeterangan}>
                       <span className={style.labelKeterangan}>Keterangan</span>
                       <ol className={style.listKeterangan}>
-                        <li>Wilayah : {wilayah}</li>
-                        <li>Nomor Tagihan : {nomor}</li>
+                        <li>Wilayah : {region}</li>
+                        <li>Nomor Tagihan : {billNumber}</li>
                       </ol>
                     </Card>
-                    {/* <h5>Total : </h5> */}
                     <div className={style.Totalbayar}>
-                      {/* <h4>Rp.</h4> */}
                       <Button type="submit" className={style.btn}>
                         Bayar
                       </Button>
