@@ -3,10 +3,14 @@ import { Navbar, CardProduct } from "../../components";
 import "../../App.css";
 import style from "./pdam.module.css";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 export default function PDAM() {
   const [wilayah, setWilayah] = useState("jakarta");
-  const [nomorTagihan, setNomorTagihan] = useState(0);
+  const [nomor, setNomor] = useState(0);
+  const [error, setError] = useState("");
 
   const onChangeHandler = (e) => {
     e.preventDefault();
@@ -15,7 +19,38 @@ export default function PDAM() {
 
   const onChangingHandler = (e) => {
     e.preventDefault();
-    setNomorTagihan(e.target.value);
+    setNomor(e.target.value);
+  };
+
+  const history = useHistory();
+
+  const { accessToken } = useSelector((state) => state.auth);
+
+  const transaction = async (wilayah, nomor) => {
+    let res = await axios.post(
+      "http://localhost:8000/v1/transactions",
+      {
+        product: "pdam",
+        wilayah,
+        nomor,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    let { status, err } = res.data;
+    if (status === "success") {
+      history.push("/history");
+    } else {
+      setError(err);
+    }
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    transaction(wilayah, nomor);
   };
 
   return (
@@ -31,7 +66,7 @@ export default function PDAM() {
                   <h4>
                     <b>Bayar Tagihan Air</b>
                   </h4>
-                  <Form>
+                  <Form onSubmit={onSubmitHandler}>
                     <h5 style={{ marginTop: "15px" }}>Wilayah</h5>
                     <Form.Select onChange={onChangeHandler}>
                       <option value="jakarta">Jakarta</option>
@@ -45,7 +80,7 @@ export default function PDAM() {
                       <span className={style.labelKeterangan}>Keterangan</span>
                       <ol className={style.listKeterangan}>
                         <li>Wilayah : {wilayah}</li>
-                        <li>Nomor Tagihan : {nomorTagihan}</li>
+                        <li>Nomor Tagihan : {nomor}</li>
                       </ol>
                     </Card>
                     {/* <h5>Total : </h5> */}

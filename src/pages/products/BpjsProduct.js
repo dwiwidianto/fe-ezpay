@@ -3,23 +3,60 @@ import { Navbar, CardProduct } from "../../components";
 import "../../App.css";
 import style from "./bpjs.module.css";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
 
 export default function BPJS() {
   const [jenis, setJenis] = useState("kesehatan");
-  const [noTagihan, setNoTagihan] = useState(0);
+  const [nomor, setNomor] = useState(0);
   const [bulan, setBulan] = useState(1);
+  const [error, setError] = useState("");
   const onChange = (e) => {
     e.preventDefault();
     setJenis(e.target.value);
   };
   const onChangingHandler = (e) => {
     e.preventDefault();
-    setNoTagihan(e.target.value);
+    setNomor(e.target.value);
   };
   const onChangeHandler = (e) => {
     e.preventDefault();
     setBulan(e.target.value);
   };
+
+  const history = useHistory();
+
+  const { accessToken } = useSelector((state) => state.auth);
+
+  const transaction = async (jenis, nomor, bulan) => {
+    let res = await axios.post(
+      "http://localhost:8000/v1/transactions",
+      {
+        product: "bpjs",
+        jenis,
+        nomor,
+        bulan,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    let { status, err } = res.data;
+    if (status === "success") {
+      history.push("/history");
+    } else {
+      setError(err);
+    }
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    transaction(jenis, nomor, bulan);
+  };
+
   return (
     <>
       <Navbar />
@@ -33,7 +70,7 @@ export default function BPJS() {
                   <h4>
                     <b>Bayar Tagihan Air</b>
                   </h4>
-                  <Form>
+                  <Form onSubmit={onSubmitHandler}>
                     <h5 style={{ marginTop: "20px" }}>Jenis BPJS</h5>
                     {["radio"].map((type) => (
                       <div key={`inline-${type}`} className="mb-3">
@@ -57,7 +94,7 @@ export default function BPJS() {
                       <span className={style.labelKeterangan}>Keterangan</span>
                       <ol className={style.listKeterangan}>
                         <li>Jenis BPJS :{jenis} </li>
-                        <li>Nomor Tagihan : {noTagihan}</li>
+                        <li>Nomor Tagihan : {nomor}</li>
                         <li>Bayar untuk :{bulan + " bulan"} </li>
                       </ol>
                     </Card>
