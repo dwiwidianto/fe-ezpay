@@ -12,7 +12,7 @@ export default function History() {
   const [error, setError] = useState([]);
 
   const fetchHistory = async () => {
-    let res = await axios.get("http://localhost:8000/v1/user/transactions", {
+    let res = await axios.get("http://http://172.104.61.239/v1/user/transactions", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

@@ -25,7 +25,7 @@ export default function Login() {
   }
 
   const signIn = async (email, password) => {
-    let res = await axios.post("http://localhost:8000/v1/auth", {
+    let res = await axios.post("http://http://172.104.61.239/v1/auth", {
       email,
       password,
     });

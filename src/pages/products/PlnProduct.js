@@ -40,7 +40,7 @@ export default function PLN() {
 
   const transaction = async (type, nominal, total, billNumber) => {
     let res = await axios.post(
-      "http://localhost:8000/v1/transactions",
+      "http://http://172.104.61.239/v1/transactions",
       {
         product: "pln",
         type,

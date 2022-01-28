@@ -24,7 +24,7 @@ const SignUp = () => {
   }
 
   const signUp = async (fullname, phone, email, password) => {
-    let res = await axios.post("http://localhost:8000/v1/users", {
+    let res = await axios.post("http://http://172.104.61.239/v1/users", {
       fullname,
       phone,
       email,

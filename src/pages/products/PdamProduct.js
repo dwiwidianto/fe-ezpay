@@ -28,7 +28,7 @@ export default function PDAM() {
 
   const transaction = async (region, billNumber) => {
     let res = await axios.post(
-      "http://localhost:8000/v1/transactions",
+      "http://http://172.104.61.239/v1/transactions",
       {
         product: "pdam",
         region,
