@@ -9,15 +9,15 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function PLN() {
-  const [jenis, setJenis] = useState("token");
+  const [type, setType] = useState("token");
   const [error, setError] = useState("");
   const [nominal, setNominal] = useState(20000);
   const [total, setTotal] = useState(nominal + 2000);
-  const [nomor, setNomor] = useState(0);
+  const [billNumber, setBillNumber] = useState(0);
 
   const handleChange = (e) => {
     e.preventDefault();
-    setJenis(e.target.value);
+    setType(e.target.value);
   };
 
   const handlingChange = (e) => {
@@ -27,7 +27,7 @@ export default function PLN() {
 
   const onChangeHandler = (e) => {
     e.preventDefault();
-    setNomor(e.target.value);
+    setBillNumber(e.target.value);
   };
 
   useEffect(() => {
@@ -38,15 +38,15 @@ export default function PLN() {
 
   const { accessToken } = useSelector((state) => state.auth);
 
-  const transaction = async (jenis, nominal, total, nomor) => {
+  const transaction = async (type, nominal, total, billNumber) => {
     let res = await axios.post(
       "http://localhost:8000/v1/transactions",
       {
         product: "pln",
-        jenis,
+        type,
         nominal,
         total,
-        nomor,
+        billNumber: parseInt(billNumber),
       },
       {
         headers: {
@@ -64,8 +64,18 @@ export default function PLN() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    transaction(jenis, nominal, total, nomor);
+    if (accessToken === "") {
+      history.push("/login");
+    }
+    transaction(type, nominal, total, billNumber);
   };
+
+  useEffect(() => {
+    if (type === "tagihan") {
+      setNominal(0);
+      setTotal(0);
+    }
+  }, [type]);
   return (
     <>
       <Navbar />
@@ -86,7 +96,7 @@ export default function PLN() {
                       <Form.Check value="tagihan" inline label="Tagihan Listrik" name="produk listrik" type="radio" onChange={handleChange} />
                     </div>
                     <Form.Control onChange={onChangeHandler} type="number" placeholder="contoh 23489274" />
-                    {jenis === "token" && (
+                    {type === "token" && (
                       <>
                         <h5 style={{ marginTop: "10px" }}>Nominal</h5>
                         <Card className={style.radioColor}>
@@ -139,15 +149,15 @@ export default function PLN() {
                     <Card className={style.cardKeterangan}>
                       <span className={style.labelKeterangan}>Keterangan</span>
                       <ol className={style.listKeterangan}>
-                        <li>Jenis Product : {`${jenis} listrik`}</li>
-                        <li>Nomor Tagihan : {`${nomor}`}</li>
-                        {jenis === "token" && <li>Nominal : {nominal}</li>}
+                        <li>Jenis Product : {`${type} listrik`}</li>
+                        <li>Nomor Tagihan : {`${billNumber}`}</li>
+                        {type === "token" && <li>Nominal : {nominal}</li>}
                       </ol>
                     </Card>
-                    {jenis === "token" && <h5>Total : </h5>}
+                    {type === "token" && <h5>Total : </h5>}
                     <div className={style.Totalbayar}>
-                      {jenis === "token" && <h4>Rp.{`${numeral(total).format("0,0")}`}</h4>}
-                      <Button type="submit" className={`${style.btn} ${jenis === "tagihan" ? style.right : style.btn}`}>
+                      {type === "token" && <h4>Rp.{`${numeral(total).format("0,0")}`}</h4>}
+                      <Button type="submit" className={`${style.btn} ${type === "tagihan" ? style.right : style.btn}`}>
                         Bayar
                       </Button>
                       {error !== "" && <div className="col-md-12 text-center text-danger">{error}</div>}

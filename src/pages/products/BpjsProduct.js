@@ -8,35 +8,35 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
 export default function BPJS() {
-  const [jenis, setJenis] = useState("kesehatan");
-  const [nomor, setNomor] = useState(0);
-  const [bulan, setBulan] = useState(1);
+  const [type, setType] = useState("kesehatan");
+  const [billNumber, setBillNumber] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState("");
   const onChange = (e) => {
     e.preventDefault();
-    setJenis(e.target.value);
+    setType(e.target.value);
   };
   const onChangingHandler = (e) => {
     e.preventDefault();
-    setNomor(e.target.value);
+    setBillNumber(e.target.value);
   };
   const onChangeHandler = (e) => {
     e.preventDefault();
-    setBulan(e.target.value);
+    setQuantity(e.target.value);
   };
 
   const history = useHistory();
 
   const { accessToken } = useSelector((state) => state.auth);
 
-  const transaction = async (jenis, nomor, bulan) => {
+  const transaction = async (type, billNumber, quantity) => {
     let res = await axios.post(
       "http://localhost:8000/v1/transactions",
       {
         product: "bpjs",
-        jenis,
-        nomor,
-        bulan,
+        type,
+        billNumber: parseInt(billNumber),
+        quantity: parseInt(quantity),
       },
       {
         headers: {
@@ -54,7 +54,10 @@ export default function BPJS() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    transaction(jenis, nomor, bulan);
+    if (accessToken === "") {
+      history.push("/login");
+    }
+    transaction(type, billNumber, quantity);
   };
 
   return (
@@ -93,9 +96,9 @@ export default function BPJS() {
                     <Card className={style.cardKeterangan}>
                       <span className={style.labelKeterangan}>Keterangan</span>
                       <ol className={style.listKeterangan}>
-                        <li>Jenis BPJS :{jenis} </li>
-                        <li>Nomor Tagihan : {nomor}</li>
-                        <li>Bayar untuk :{bulan + " bulan"} </li>
+                        <li>Jenis BPJS :{type} </li>
+                        <li>Nomor Tagihan : {billNumber}</li>
+                        <li>Bayar untuk :{quantity + " bulan"} </li>
                       </ol>
                     </Card>
                     {/* <h5>Total : </h5> */}

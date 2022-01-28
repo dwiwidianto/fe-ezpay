@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Login, Signup, Home, PLN, PDAM, BPJS } from "./pages";
+import { Login, Signup, History, PLN, PDAM, BPJS } from "./pages";
 import "./App.css";
 
 const App = () => {
@@ -8,7 +8,8 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <div className="bg">
-          <Route className="display-bg" path="/" component={Home} exact />
+          <Route path="/" component={PLN} exact />
+          <Route path="/history" component={History} />
           <Route path="/login" component={Login} exact />
           <Route path="/register" component={Signup} exact />
           <Route path="/products/pln" component={PLN} exact />
